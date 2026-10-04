@@ -68,7 +68,7 @@ export default function HomeScreen({ user, token, onLogout, onAuthSuccess, onPla
       {/* top-left brand mark */}
       <div style={{ position: "fixed", top: "18px", left: "22px", display: "flex", alignItems: "center", gap: "8px", zIndex: 5 }}>
         <span style={{ fontSize: "1.3rem", color: C.gold }}><Icon name="chess-logo" size={72} /></span>
-        <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.95rem", color: C.tx, letterSpacing: "0.08em" }}>CHESS MASTER</span>
+        <span className="cm-brand-text" style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "0.95rem", color: C.tx, letterSpacing: "0.08em" }}>CHESS MASTER</span>
       </div>
 
       {/* hero card */}
@@ -101,10 +101,11 @@ export default function HomeScreen({ user, token, onLogout, onAuthSuccess, onPla
       </div>
 
       {/* quick links row */}
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", justifyContent: "center" }}>
         <div style={linkChip} onClick={() => setShowLeaderboard(true)}><Icon name="chess-cup" size={46} />Leaderboard</div>
         <div style={linkChip} onClick={() => setShowTournaments(true)}><Icon name="knock-out-stage" size={46} />Tournaments</div>
         <div style={linkChip} onClick={() => user ? setShowFriends(true) : setShowAuth(true)}><Icon name="friends" size={46} />Friends</div>
+        <a href="/meet-the-creator" style={{ ...linkChip, textDecoration: "none" }}><Icon name="profile" size={46} />Meet the Creator</a>
       </div>
 
       {!user && <div style={{ fontSize: "var(--fs-caption)", color: C.txFaint, textAlign: "center", maxWidth: "260px" }}>Sign in to save your scores, climb the ELO leaderboard, and challenge friends.</div>}
