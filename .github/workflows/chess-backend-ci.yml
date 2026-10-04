@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Notify Slack
         if: always()
-        uses: slackapi/slack-github-action@v1.26.0
+        uses: slackapi/slack-github-action@v4.0.0
         with:
           payload: |
             {"text": "${{ job.status == 'success' && '✅' || '❌' }} *Secret Scan — Backend* | Branch: ${{ github.ref_name }}"}
@@ -114,7 +114,7 @@ jobs:
     if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
     steps:
       - name: Notify Slack
-        uses: slackapi/slack-github-action@v1.26.0
+        uses: slackapi/slack-github-action@v4.0.0
         with:
           payload: |
             {"text": "🔄 *GitHub Actions Backend اكتملت — تشغيل Jenkins*\nBranch: ${{ github.ref_name }} | By: ${{ github.actor }}"}

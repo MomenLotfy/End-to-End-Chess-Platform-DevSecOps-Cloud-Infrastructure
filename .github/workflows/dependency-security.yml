@@ -60,7 +60,7 @@ jobs:
           fi
 
       - name: Slack Notification
-        uses: slackapi/slack-github-action@v1.26.0
+        uses: slackapi/slack-github-action@v4.0.0
         with:
           payload: |
             {
@@ -159,7 +159,7 @@ jobs:
 
     steps:
       - name: Send Weekly Report to Slack
-        uses: slackapi/slack-github-action@v1.26.0
+        uses: slackapi/slack-github-action@v4.0.0
         with:
           payload: |
             {
