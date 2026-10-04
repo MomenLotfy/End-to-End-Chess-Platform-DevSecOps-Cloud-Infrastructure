@@ -41,7 +41,7 @@ jobs:
           npm audit --audit-level=high || true
 
       - name: Upload Audit Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: npm-audit-v1
           path: Chess-V1/npm-audit-v1.json
@@ -98,7 +98,7 @@ jobs:
           npm audit --audit-level=high || true
 
       - name: Upload Audit Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: npm-audit-v2
           path: Chess-V2/npm-audit-v2.json

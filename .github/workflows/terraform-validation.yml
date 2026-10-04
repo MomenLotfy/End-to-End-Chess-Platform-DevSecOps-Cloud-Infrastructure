@@ -194,7 +194,7 @@ jobs:
             | tee kubeconform-results.json || true
 
       - name: Upload Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: kubeconform-results
